@@ -14,7 +14,7 @@ fn problem1(arr: Vec<i32>) {
     let mut loop_over: bool = false;
     let mut c_index: usize = 0;
     while !loop_over {
-        if c_index == arr.len() - 1 {
+        if c_index == arr.len() {
             loop_over = true;
         } else {
             while_loop_answer += arr[c_index];
@@ -27,7 +27,7 @@ fn problem1(arr: Vec<i32>) {
     let mut recursion_loop_answer: i32 = 0;
     let mut nc_index: usize = 0;
     'recursion: loop {
-        if nc_index == arr.len() - 1 {
+        if nc_index == arr.len() {
             break 'recursion;
         } else {
             recursion_loop_answer += arr[nc_index];
