@@ -69,11 +69,34 @@ fn problem2(arr1: Vec<&str>, arr2: Vec<i32>) {
     }
 
     for i in 0..result_arr.len() {
-        println!("{}: {}", i, result_arr[i]);
+        print!("{},", result_arr[i]);
     }
+    println!("");
+}
+
+fn problem3(num: usize) {
+    println!("");
+    println!("Problem 3:");
+    println!("Write a function that computes the list of the first 100 Fibonacci numbers. By definition, the first two numbers in the Fibonacci sequence are 0 and 1, and each subsequent number is the sum of the previous two. As an example, here are the first 10 Fibonnaci numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, and 34.");
+
+    let mut arr: Vec<i32> = vec![0, 1];
+    let mut c_index: usize = arr.len() - 1;
+    'fibonacci: loop {
+        if arr.len() == num {
+            break 'fibonacci;
+        }
+        arr.push(arr[c_index] + arr[c_index - 1]);
+        c_index += 1;
+    }
+
+    for i in 0..arr.len() {
+        print!("{},", arr[i]);
+    }
+    println!("");
 }
 
 fn main() {
     problem1(vec![0, 1, 2, 3, 4, 5, 6]);
     problem2(vec!["a", "b", "c"], vec![1, 2, 3]);
+    problem3(10);
 }
